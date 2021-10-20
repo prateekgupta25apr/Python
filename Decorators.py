@@ -1,3 +1,11 @@
+"""
+Decorators
+
+Question:
+Create a decorator
+
+"""
+
 # Defining a decorator
 def input_upper(function_name):
 

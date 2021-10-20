@@ -1,12 +1,22 @@
 """
+EmailSort
+
+Question:
 First get all the alphabets of the email then sort the alphabets then without changing the
 position of the special characters and numbers just replace alphabets
+
+Examples
+
+Input: pencil@gmail.com
+Output : accegi@illmm.nop
+
+Input : hi.hello@gmail.com
+Output : ac.eghhi@illlm.moo
 """
 
 import re
 
-s = "prateek.gupta25apr@gmail.com"
-print("Original String", s, "size =", len(s))
+s = input("Enter an email\n")
 
 regex = r'[A-Za-z]+'
 l = list(s)
@@ -18,8 +28,6 @@ for i in range(len(l)):
     else:
         d[i] = l[i]
 r.sort()
-# print(r)
-# print(d)
 
 result = list()
 i = 0
@@ -35,4 +43,4 @@ while i < t:
         i += 1
         j += 1
 
-print("Processed String", "".join(result), "size =", len(result))
+print("".join(result))
