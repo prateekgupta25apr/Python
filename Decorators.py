@@ -6,36 +6,31 @@ Create a decorator
 
 """
 
-# Defining a decorator
-def input_upper(function_name):
 
-    # Defining a wrapper
-    def wrapper(function_input):
+def decorator(function_ref):
+    def wrapper_function(arg):
+        updated_input = arg * 2
 
-        # Changing function input to uppercase
-        function_input_upper = function_input.upper()
+        return function_ref(updated_input)
 
-        # Updating value of __name__ for wrapper
-        setattr(wrapper, "__name__", getattr(function_name, "__name__"))
-
-        # Calling the function
-        function_name(function_input_upper)
-
-    # Returning wrapper
-    return wrapper
+    return wrapper_function
 
 
-# Using decorator
-@input_upper
-def print_input(input_string):
-    print(input_string)
+def argument_decorator(val):
+    def decorator_function(function_ref):
+        def wrapper_function(arg):
+            updated_input = arg * 2 * val
+
+            return function_ref(updated_input)
+
+        return wrapper_function
+
+    return decorator_function
 
 
-# Taking input
-a = input("Enter your name\n")
+@decorator
+def actual_function(i):
+    return i
 
-# A call to function print_input()
-print_input(a)
 
-print(type(print_input))
-print(type(input_upper))
+print(actual_function(5))

@@ -12,6 +12,9 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="django.db.models.fields.CharField.__add__" />
+          <option value="website_home.models.Project._meta" />
+          <option value="website_home.models.Education._meta" />
+          <option value="website_home.models.Document.objects" />
         </list>
       </option>
     </inspection_tool>
